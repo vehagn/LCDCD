@@ -29,7 +29,7 @@ int main(int argc, char* argv[]){
     
 	while (true){       
         printTimeLeft(lcd, targetTime);
-		usleep(2000);
+		sleep(1);
 	}	
 	return 0;
 }
