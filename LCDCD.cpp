@@ -53,6 +53,6 @@ int main(int argc, char* argv[]){
         lcd.write(19, 1," ");
         lcd.write( 0, 0,"                    ");
     }  
-    usleep(5000);
+    usleep(50000);
     }
 }
