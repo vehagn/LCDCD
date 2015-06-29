@@ -5,7 +5,7 @@ int main(int argc, char* argv[]){
 	if(daemon(0,0) == -1)
 		err(1, NULL);
 	*/
-	time_t targetTime = 1339190000//1439190000;
+	time_t targetTime = 1339190000;//1439190000;
     int timeLeft = 0;
     int i;
     int j;
