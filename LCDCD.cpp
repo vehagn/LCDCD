@@ -5,12 +5,11 @@ int main(int argc, char* argv[]){
 	if(daemon(0,0) == -1)
 		err(1, NULL);
 	
-	rpihw::gpio io;
-	
 	time_t currentTime = 0;
 	time_t targetTime = 1439190000;
 	
 	localtime(&currentTime);
+
 	struct tm * timeinfo;
 	
 	hd44780 lcd(14, 15, 24, 25, 8, 7);
