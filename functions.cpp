@@ -80,7 +80,7 @@ void printTime(hd44780 &lcd){
 	printfl(buf, lcd);	
 }
 
-void printTimeLeft(hd44780 &lcd, time_t targetTime){
+int printTimeLeft(hd44780 &lcd, time_t targetTime){
 	time_t now;
     int timeLeft;
 	char buf [64];
@@ -93,4 +93,6 @@ void printTimeLeft(hd44780 &lcd, time_t targetTime){
     lcd.write(0,3,"                    ");
     lcd.move((19-timeLeft%20),3);
     lcd.write(hd44780::CCHAR0);
+    
+    return (timeLeft>0)?(timeLeft):(0);
 }
