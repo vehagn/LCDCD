@@ -27,6 +27,7 @@ using namespace std;
 using namespace rpihw::iface;
 using namespace rpihw::display;
 using namespace rpihw::utils;
+using namespace rpihw::gpio;
 
 //Functions
 void moveAndClearLine(int, int, hd44780&);
