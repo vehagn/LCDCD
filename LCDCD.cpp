@@ -16,18 +16,11 @@ int main(int argc, char* argv[]){
 	io.setup(23, rpihw::OUTPUT);
 	io.write(23, rpihw::HIGH); 
 	
-	lcd.move(0,1);
-	lcd.write("LCD Countdown ver. 0.1.0");
-    sleep(5);
-    lcd.clear();
-    lcd.move(0,0);
-	lcd.write("Coffee countdown");
-    lcd.move(0,0);
     lcd.write("Coffee bar opens in:");
+    moveAndClearLine(0,2,lcd);
+	lcd.write(" Days  Hrs  Min  Sec");
     
-	while (true){
-        moveAndClearLine(0,1,lcd);
-		lcd.write("Days  Hrs  Min  Sec ");
+	while (true){       
         printTimeLeft(lcd, targetTime);
 		sleep(1);
 	}	
