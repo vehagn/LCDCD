@@ -21,6 +21,7 @@ char getch(){
         return (buf);     
 	
 }
+/*
 void getLine(char buf[], hd44780 &lcd){
 	char c;
 	int i = 0;
@@ -49,6 +50,7 @@ void getLine(char buf[], hd44780 &lcd){
 	buf[i%128] = '\0';
 	lcd.setCursor(hd44780::NO_CURSOR);
 }
+*/
 void printfl(string str, hd44780 &lcd){
 	printf("%s\n", str.c_str());
 	lcd.write(str);

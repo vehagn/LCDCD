@@ -31,7 +31,7 @@ using namespace rpihw::utils;
 //Functions
 void moveAndClearLine(int, int, hd44780&);
 char getch();
-void getLine(char[], hd44780&);
+//void getLine(char[], hd44780&);
 void printfl(string, hd44780&);
 char* str2char(string);
 
