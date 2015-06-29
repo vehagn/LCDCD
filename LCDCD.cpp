@@ -17,7 +17,7 @@ int main(int argc, char* argv[]){
 	io.write(23, rpihw::HIGH); 
 	
     lcd.write("Coffee bar opens in:");
-    moveAndClearLine(0,2,lcd);
+    moveAndClearLine(0,1,lcd);
 	lcd.write("Days Hours  Min  Sec");
     
 	while (true){       

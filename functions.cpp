@@ -89,6 +89,6 @@ void printTimeLeft(hd44780 &lcd, time_t targetTime){
     timeLeft = (int)difftime(targetTime, now);
     
 	sprintf(buf,"  %3i %3i  %3i  %3i",timeLeft/86400, (timeLeft%86400)/3600, (timeLeft%3600)/60, timeLeft%60);
-	lcd.move(0,1);
+	lcd.move(0,2);
 	printfl(buf, lcd);	
 }
