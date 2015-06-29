@@ -16,8 +16,8 @@ int main(int argc, char* argv[]){
    	lcd.init(20, 4);
 	lcd.clear();
     rpihw::gpio &io = rpihw::gpio::get();
-	io.setup(23, OUTPUT);
-	io.write(23, HIGH); 
+	io.setup(23, rpihw::OUTPUT);
+	io.write(23, rpihw::HIGH); 
 	
 	lcd.move(0,1);
 	lcd.write("LCD Countdown ver. 0.1.0");
