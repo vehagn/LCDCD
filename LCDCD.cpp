@@ -15,9 +15,9 @@ int main(int argc, char* argv[]){
 	hd44780 lcd(14, 15, 24, 25, 8, 7);
    	lcd.init(20, 4);
 	lcd.clear();
-    gpio &io = gpio::get();
-	io.setup(23, OUTPUT);
-	io.write(23, HIGH); 
+    rpihw::gpio &io = rpihw::gpio::get();
+	io.setup(23, rpihw::gpio::OUTPUT);
+	io.write(23, rpihw::gpio::HIGH); 
 	
 	lcd.move(0,1);
 	lcd.write("LCD Countdown ver. 0.1.0");
