@@ -35,6 +35,7 @@ int main(int argc, char* argv[]){
 		sleep(1);
 	} while(timeLeft);
     
+    lcd.clear();
     lcd.write(1,1,"The coffee bar is: ");
     lcd.write(1,2,"      !OPEN!       ");
     
@@ -49,10 +50,10 @@ int main(int argc, char* argv[]){
     }
     else{
         lcd.write( 0, 0,"                    ");
-        lcd.write( 0, 1," ");
-        lcd.write(19, 1," ");
-        lcd.write( 0, 0,"                    ");
+        lcd.write( 0, 1," "); lcd.write(19, 1," ");
+        lcd.write( 0, 2," "); lcd.write(19, 2," ");
+        lcd.write( 0, 3,"                    ");
     }  
-    usleep(50000);
+    usleep(200000);
     }
 }
