@@ -31,7 +31,7 @@ int main(int argc, char* argv[]){
 	while (true){
         moveAndClearLine(0,1,lcd);
 		lcd.write("");
-        
+        printTime(lcd);
 		usleep(650);
 	}	
 	return 0;
