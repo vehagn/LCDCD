@@ -43,10 +43,10 @@ int main(int argc, char* argv[]){
     if (i%2){
         lcd.move( 0, 0);
         for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
-        lcd.write( 0, 1,hd44780::CCHAR0); lcd.write(19, 1,hd44780::CCHAR0);
-        lcd.write( 0, 2,hd44780::CCHAR0); lcd.write(19, 2,hd44780::CCHAR0);
         lcd.move( 0, 3);
         for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
+        lcd.write( 0, 1,hd44780::CCHAR0); lcd.write(19, 1,hd44780::CCHAR0);
+        lcd.write( 0, 2,hd44780::CCHAR0); lcd.write(19, 2,hd44780::CCHAR0);     
     }
     else{
         lcd.write( 0, 0,"                    ");
