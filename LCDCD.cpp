@@ -49,10 +49,10 @@ int main(int argc, char* argv[]){
     }
     else{
         lcd.write( 0, 0,"                    ");
-        lcd.write( 1, 1," ");
+        lcd.write( 0, 1," ");
         lcd.write(19, 1," ");
         lcd.write( 0, 0,"                    ");
     }  
-    usleep(2000);
+    usleep(5000);
     }
 }
