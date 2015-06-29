@@ -5,7 +5,7 @@ int main(int argc, char* argv[]){
 	if(daemon(0,0) == -1)
 		err(1, NULL);
 	*/
-	time_t targetTime = 1439190000;
+	time_t targetTime = 1339190000//1439190000;
     int timeLeft = 0;
     int i;
     int j;
@@ -35,8 +35,8 @@ int main(int argc, char* argv[]){
 		sleep(1);
 	} while(timeLeft);
     
-    lcd.write(1,1,'The coffee bar is: ');
-    lcd.write(1,2,'      !OPEN!       ');
+    lcd.write(1,1,"The coffee bar is: ");
+    lcd.write(1,2,"      !OPEN!       ");
     
 	for (i=0;i<360000;i++){
     if (i%2){
@@ -48,10 +48,10 @@ int main(int argc, char* argv[]){
         for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
     }
     else{
-        lcd.write( 0, 0,'                    ');
-        lcd.write( 1, 1,' ');
-        lcd.write(19, 1,' ');
-        lcd.write( 0, 0,'                    ');
+        lcd.write( 0, 0,"                    ");
+        lcd.write( 1, 1," ");
+        lcd.write(19, 1," ");
+        lcd.write( 0, 0,"                    ");
     }  
     usleep(2000);
     }
