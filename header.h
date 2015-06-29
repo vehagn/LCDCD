@@ -36,4 +36,4 @@ void printfl(string, hd44780&);
 char* str2char(string);
 
 void printTime(hd44780&);
-void printTimeLeft(hd44780&, time_t);
+int printTimeLeft(hd44780&, time_t);
