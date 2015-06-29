@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
 	
     lcd.write("Coffee bar opens in:");
     moveAndClearLine(0,2,lcd);
-	lcd.write(" Days  Hrs  Min  Sec");
+	lcd.write("Days Hours  Min  Sec");
     
 	while (true){       
         printTimeLeft(lcd, targetTime);
