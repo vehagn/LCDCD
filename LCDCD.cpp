@@ -11,7 +11,6 @@ int main(int argc, char* argv[]){
 	time_t targetTime = 1439190000;
 	
 	localtime(&currentTime);
-	int startDay = localtime(&startTime)->tm_yday;
 	struct tm * timeinfo;
 	
 	hd44780 lcd(14, 15, 24, 25, 8, 7);
