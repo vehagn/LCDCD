@@ -35,4 +35,4 @@ char getch();
 void printfl(string, hd44780&);
 char* str2char(string);
 
-void printTime(hd44780&)
+void printTime(hd44780&);
