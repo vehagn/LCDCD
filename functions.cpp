@@ -87,6 +87,7 @@ int printTimeLeft(hd44780 &lcd, time_t targetTime){
 	
 	time(&now);
     timeLeft = (int)difftime(targetTime, now);
+    timeLeft = (timeLeft>0)?(timeLeft):(0);
 	sprintf(buf,"%5i%5i%5i%5i",timeLeft/86400, (timeLeft%86400)/3600, (timeLeft%3600)/60, timeLeft%60);
 	lcd.move(0,2);
 	printfl(buf, lcd);
@@ -94,5 +95,5 @@ int printTimeLeft(hd44780 &lcd, time_t targetTime){
     lcd.move((19-timeLeft%20),3);
     lcd.write(hd44780::CCHAR0);
     
-    return (timeLeft>0)?(timeLeft):(0);
+    return timeLeft;
 }

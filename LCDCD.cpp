@@ -33,9 +33,12 @@ int main(int argc, char* argv[]){
 	do{       
         timeLeft = printTimeLeft(lcd, targetTime);
 		sleep(1);
+        printf("while");
 	} while(timeLeft);
-    
+    printf("lol");
     lcd.clear();
+    lcd.move();
+    printf("before loop");
     lcd.write(1,1,"The coffee bar is: ");
     lcd.write(1,2,"      !OPEN!       ");
     
@@ -54,6 +57,6 @@ int main(int argc, char* argv[]){
         lcd.write( 0, 2," "); lcd.write(19, 2," ");
         lcd.write( 0, 3,"                    ");
     }  
-    usleep(200000);
+    usleep(50000);
     }
 }
