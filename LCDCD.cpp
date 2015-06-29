@@ -27,7 +27,7 @@ int main(int argc, char* argv[]){
     
 	while (true){
         moveAndClearLine(0,1,lcd);
-		lcd.write("");
+		lcd.write("Days  Hrs  Min  Sec ");
         printTimeLeft(lcd, targetTime);
 		sleep(1);
 	}	

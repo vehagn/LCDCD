@@ -86,13 +86,9 @@ void printTimeLeft(hd44780 &lcd, time_t targetTime){
 	char buf [64];
 	
 	time(&now);
-    difftime(targetTime, now);
-	timeinfo = *localtime(&now);
-	strftime(buf,64,"%a %d %b %H:%M:%S \nWeek %V Year %G",&timeinfo);
-	
-	lcd.clear();
-	lcd.move(0,1);
-	printfl("Timestamp:", lcd);
+    double timeLeft = difftime(targetTime, now);
+    
+	sprintf(buf,"%02f",timeLeft%86400);
 	lcd.move(0,2);
 	printfl(buf, lcd);	
 }
