@@ -82,7 +82,7 @@ void printTime(hd44780 &lcd){
 
 void printTimeLeft(hd44780 &lcd, time_t targetTime){
 	time_t now;
-    int timeLeft
+    int timeLeft;
 	char buf [64];
 	
 	time(&now);
