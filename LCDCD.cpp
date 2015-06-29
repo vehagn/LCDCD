@@ -5,10 +5,11 @@ int main(int argc, char* argv[]){
 	if(daemon(0,0) == -1)
 		err(1, NULL);
 	*/
-	time_t targetTime = 1339190000;//1439190000;
+    
+    // targetTime in UNIX time
+	time_t targetTime = 1439190000;
     int timeLeft = 0;
-    int i;
-    int j;
+    int i, j;
 	
     //Setup LCD screen
 	hd44780 lcd(14, 15, 24, 25, 8, 7);
