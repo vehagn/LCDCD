@@ -82,13 +82,13 @@ void printTime(hd44780 &lcd){
 
 void printTimeLeft(hd44780 &lcd, time_t targetTime){
 	time_t now;
-	struct tm timeinfo;
+    int timeLeft
 	char buf [64];
 	
 	time(&now);
-    double timeLeft = difftime(targetTime, now);
+    timeLeft = (int)difftime(targetTime, now);
     
-	sprintf(buf,"%i  %f",(int)timeLeft, timeLeft);
+	sprintf(buf,"%4i  %3i  %3i  %3i",timeLeft/86400, (timeLeft/86400)/3600, timeLeft/60, timeLeft%60);
 	lcd.move(0,2);
 	printfl(buf, lcd);	
 }
