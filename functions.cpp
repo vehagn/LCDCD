@@ -79,3 +79,20 @@ void printTime(hd44780 &lcd){
 	lcd.move(0,2);
 	printfl(buf, lcd);	
 }
+
+void printTimeLeft(hd44780 &lcd, time_t targetTime){
+	time_t now;
+	struct tm timeinfo;
+	char buf [64];
+	
+	time(&now);
+    difftime(targetTime, now);
+	timeinfo = *localtime(&now);
+	strftime(buf,64,"%a %d %b %H:%M:%S \nWeek %V Year %G",&timeinfo);
+	
+	lcd.clear();
+	lcd.move(0,1);
+	printfl("Timestamp:", lcd);
+	lcd.move(0,2);
+	printfl(buf, lcd);	
+}
