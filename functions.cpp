@@ -85,12 +85,19 @@ int printTimeLeft(hd44780 &lcd, time_t targetTime){
     int timeLeft;
 	char buf [64];
 	
+    // Calculate time remaining, set to 0 is time is passed.
 	time(&now);
     timeLeft = (int)difftime(targetTime, now);
     timeLeft = (timeLeft>0)?(timeLeft):(0);
+    
+    // Create output
 	sprintf(buf,"%5i%5i%5i%5i",timeLeft/86400, (timeLeft%86400)/3600, (timeLeft%3600)/60, timeLeft%60);
+    
+    // Print to LCD and terminal
 	lcd.move(0,2);
 	printfl(buf, lcd);
+    
+    // Print moving block to LCD
     lcd.write(0,3,"                    ");
     lcd.move((19-timeLeft%20),3);
     lcd.write(hd44780::CCHAR0);

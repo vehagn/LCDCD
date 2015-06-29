@@ -33,14 +33,11 @@ int main(int argc, char* argv[]){
 	do{       
         timeLeft = printTimeLeft(lcd, targetTime);
 		sleep(1);
-        printf("while");
 	} while(timeLeft);
-    printf("lol");
+
     lcd.clear();
-    lcd.move();
-    printf("before loop");
     lcd.write(1,1,"The coffee bar is: ");
-    lcd.write(1,2,"      !OPEN!       ");
+    lcd.write(1,2,"     !!OPEN!!      ");
     
 	for (i=0;i<360000;i++){
     if (i%2){
