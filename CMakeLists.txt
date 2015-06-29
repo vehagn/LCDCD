@@ -1,0 +1,25 @@
+# CMake's configuration
+
+# Set the minimum required version of CMake for this project
+cmake_minimum_required(VERSION 2.6)
+
+# Set the compiler flags
+add_definitions(-Wall -ansi -pedantic -pedantic-errors -std=c++11)
+
+# Find dependencies
+find_package(RpiHw REQUIRED)
+find_package(Boost REQUIRED)
+
+# Set the path to the header files
+include_directories(${RpiHw_INCLUDE_DIRS})
+include_directories(${Boost_INCLUDE_DIRS})
+
+# Add librares
+add_library(functions functions.cpp)
+
+# Build
+add_executable(LCDCD LCDCD.cpp)
+target_link_libraries(LCDCD functions ${RpiHw_LIBRARIES} ${Boost_LIBRARIES})
+
+
+
