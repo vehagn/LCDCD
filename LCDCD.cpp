@@ -4,8 +4,7 @@ int main(int argc, char* argv[]){
 	
 	if(daemon(0,0) == -1)
 		err(1, NULL);
-	
-    
+	  
     // targetTime in UNIX time
 	time_t targetTime = 1439190000;
     int timeLeft = 0;
@@ -36,25 +35,25 @@ int main(int argc, char* argv[]){
 		sleep(1);
 	} while(timeLeft);
 
+    //Celebrate that the countdown is finished
     lcd.clear();
     lcd.write(1,1,"The coffee bar is: ");
     lcd.write(1,2,"     !!OPEN!!      ");
     
 	for (i=0;i<360000;i++){
-    if (i%2){
-        lcd.move( 0, 0);
-        for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
-        lcd.move( 0, 3);
-        for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
-        lcd.write( 0, 1,hd44780::CCHAR0); lcd.write(19, 1,hd44780::CCHAR0);
-        lcd.write( 0, 2,hd44780::CCHAR0); lcd.write(19, 2,hd44780::CCHAR0);     
-    }
-    else{
-        lcd.write( 0, 0,"                    ");
-        lcd.write( 0, 1," "); lcd.write(19, 1," ");
-        lcd.write( 0, 2," "); lcd.write(19, 2," ");
-        lcd.write( 0, 3,"                    ");
-    }  
+        if (i%2){
+            lcd.move( 0, 0);
+            for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
+            lcd.move( 0, 3);
+            for (j=0;j<20;j++){lcd.write(hd44780::CCHAR0);}
+            lcd.write( 0, 1,hd44780::CCHAR0); lcd.write(19, 1,hd44780::CCHAR0);
+            lcd.write( 0, 2,hd44780::CCHAR0); lcd.write(19, 2,hd44780::CCHAR0);     
+        }else{
+            lcd.write( 0, 0,"                    ");
+            lcd.write( 0, 1," "); lcd.write(19, 1," ");
+            lcd.write( 0, 2," "); lcd.write(19, 2," ");
+            lcd.write( 0, 3,"                    ");
+        }  
     usleep(50000);
     }
 }
