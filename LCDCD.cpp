@@ -17,13 +17,8 @@ int main(int argc, char* argv[]){
     lcd.clear(); 
     
     //Define custom symbols
-    uint8_t black[8]        = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
+    uint8_t black[8] = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
     lcd.defChar(hd44780::CCHAR0, black);
-    
-    //Turn on backlighting
-    rpihw::gpio &io = rpihw::gpio::get();
-    io.setup(23, rpihw::OUTPUT);
-    io.write(23, rpihw::HIGH); 
 	
     //Static text
     lcd.write("Coffee bar opens in:");
@@ -54,7 +49,6 @@ int main(int argc, char* argv[]){
             lcd.write( 0, 1," "); lcd.write(19, 1," ");
             lcd.write( 0, 2," "); lcd.write(19, 2," ");
         }
-        (i%3)?(io.write(23, rpihw::HIGH)):(io.write(23, rpihw::LOW));
         usleep(1e5);
     }
 }
