@@ -1,10 +1,10 @@
 #include "header.h"
 
 int main(int argc, char* argv[]){
-	/*
+	
 	if(daemon(0,0) == -1)
 		err(1, NULL);
-	*/
+	
     
     // targetTime in UNIX time
 	time_t targetTime = 1439190000;
