@@ -98,7 +98,7 @@ int printTimeLeft(hd44780 &lcd, time_t targetTime){
 	printfl(buf, lcd);
     
     // Print moving block to LCD
-    lcd.write(19-(timeLeft-1)%20,3," ");
+    lcd.write(19-(timeLeft+1)%20,3," ");
     lcd.move(19-timeLeft%20,3);
     lcd.write(hd44780::CCHAR0);
     
