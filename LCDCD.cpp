@@ -6,7 +6,7 @@ int main(int argc, char* argv[]){
         err(1, NULL);
 	  
     // targetTime in UNIX time
-    time_t targetTime = 1439190000; //10th August 2015 9:00 a.m.
+    time_t targetTime = 1443420000; //28th September 2015 8:00 a.m.
     int timeLeft = 0;
     int i, j;
 	
@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
     lcd.defChar(hd44780::CCHAR0, black);
 	
     //Static text
-    lcd.write("Coffee bar opens in:");
+    lcd.write("New apartment in:   ");
     moveAndClearLine(0,1,lcd);
     lcd.write(" Days  Hrs  Min  Sec");
     
@@ -32,8 +32,8 @@ int main(int argc, char* argv[]){
 
     //Celebrate that the countdown is finished
     lcd.clear();
-    lcd.write(1,1,"The coffee bar is: ");
-    lcd.write(1,2,"     !!OPEN!!      ");
+    lcd.write(1,1,"      I have       ");
+    lcd.write(1,2,"     !!MOVED!!     ");
     
     for (i=0;i<360000;i++){
 	if (i%2){
